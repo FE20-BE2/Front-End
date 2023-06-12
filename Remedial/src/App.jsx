@@ -1,4 +1,6 @@
 import Navbar from "./components/Navbar"
+import KelasOffline from "./components/Kelasoffline"
+import Footer from "./components/Footer"
 import { useEffect } from "react"
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
   return (
     <>
       <Navbar />
+      <KelasOffline />
+      <Footer />
     </>
   )
 }
