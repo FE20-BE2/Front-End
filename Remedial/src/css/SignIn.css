@@ -1,0 +1,53 @@
+.signIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 120px;
+}
+.loginGambar{
+    float: left;
+}
+.loginGambar img{
+    max-height: 99vh;
+    border-bottom-right-radius: 70px;
+}
+.inputLogin{
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+.inputLogin h1{
+    font-size: 48px;
+    margin-bottom: 62px;
+}
+label{
+    font-weight: 500;
+    font-size: 20px;
+}
+input{
+    width: 514px;
+    height: 40px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-radius: 8px;
+    font-size: 17px;
+}
+.tombolLogin{
+    border: none;
+    background-color: #292828;
+    color: white;
+    padding: 15px 24px;
+    border-radius: 8px;
+    margin-top: 45px;
+    font-size: 18px;
+}
+.tombolLogin:hover{
+    background-color: #504e4e;
+}
+.mid{
+    display: grid;
+}

@@ -26,6 +26,31 @@ nav {
 .navbar {
   display: flex;
 }
+.textLogin{
+  display: flex;
+}
+.afterlogin{
+  background-color: rgb(235, 230, 230);
+  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border-style: inset;
+  border-width: thin;
+  margin: -10px;
+  
+}
+.buttonLogOut p{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.buttonLogOut{
+  border-style: none;
+  color: black;
+  border-radius: 8px;
+}
+.buttonLogOut:hover {
+  color: rgb(143, 142, 142);
+}
 .navbar a {
   font-size: 1.2rem;
   font-weight: 500;
@@ -35,7 +60,7 @@ nav {
   color: black;
 }
 .navbar a:hover {
-  color: red;
+  color: rgb(143, 142, 142);
 }
 .main {
   display: flex;
@@ -46,7 +71,7 @@ nav {
   align-items: center;
 }
 .main a:hover {
-  color: red;
+  color: rgb(177, 176, 176);
 }
 #menu-icon {
   font-size: 35px;
@@ -115,8 +140,12 @@ nav {
   }
   #kelas {
     margin-left: 40px;
-    margin-right: 119px;
+    margin-right: 115px;
     padding-left: 10px;
+  }
+  .buttonLogOut{
+    margin-left: 40px;
+    margin: 12px 0 12px 40px;
   }
   .signUp a {
     color: black;

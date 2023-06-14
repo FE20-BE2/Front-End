@@ -1,0 +1,70 @@
+.tentang-kami {
+    align-items: center;
+    display: flex;
+    margin: 4.3%;
+  }
+  .tentang-kami-foto {
+    float: left;
+  }
+  .tentang-kami-image img {
+    width: 396px;
+  }
+  .tentang-kami-desc {
+    margin-left: 4.7vw;
+    font-family: "Open Sans", sans-serif;
+  }
+  .tentang-kami-desc-p1 {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+  .tentang-kami-desc h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+  .tentang-kami-desc-p3 {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+  .tentang-kami-button button {
+    font-family: "Lato", sans-serif;
+    color: black;
+    font-size: 20px;
+    padding: 12px 31.5px;
+    border-color: rgb(230, 229, 229);
+    background-color: white;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  @media (max-width: 1090px) {
+    .tentang-kami {
+      display: grid;
+      place-items: center;
+      margin: 20% 20px;
+    }
+    .tentang-kami-desc {
+      margin-left: 0px;
+      font-family: "Open Sans", sans-serif;
+    }
+    .tentang-kami-desc-p1 {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .tentang-kami-desc h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .tentang-kami-desc-p3 {
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    .tentang-kami-button button {
+      font-size: 16px;
+      padding: 8px 21.5px;
+    }
+    .tentang-kami-foto {
+      margin-bottom: 52px;
+    }
+    .tentang-kami-image img {
+      width: 297px;
+    }
+  }

@@ -1,0 +1,137 @@
+.five-section{
+    font-family: "Open Sans", sans-serif;
+  }
+  .program-remedial-desc{
+    display: grid;
+    place-items: center;
+    margin-bottom: 32px;
+  }
+  .program-remedial-judul{
+    text-align: center;
+    max-width: 50%;
+  }
+  .program-remedial-judul h1{
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .program-remedial-judul p{
+    font-size: 18px;
+  }
+  .flex-container-program {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 50px;
+  }
+  
+  .flex-items-program {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 543px;
+    height: max-content;
+    border-radius: 8px; 
+    background: #FFFFFF; 
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35px;
+  }
+  .flex-items-program-image img{
+    width: 543px;
+    height: 308px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .flex-items-program-desc{
+    margin: 32px 0px 24px 0px;
+    padding: 0px 24px;
+  }
+  .flex-items-program-desc h2{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: black;
+  }
+  .flex-items-program-desc > p{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 32px;
+  }
+  .flex-items-program-benefits{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .flex-items-program-benefits p{
+    margin-left: 16px;
+    color: black;
+  }
+  .flex-items-program-benefits-harga{
+    margin: 8px 0px 40px 0px;
+    font-size: 24px;
+    color: #FF4D4F;
+    font-weight: 600;
+  }
+  #link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2D2C2C;
+    padding: 20px 0px;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  @media (max-width: 1090px){
+    .program-remedial-desc{
+      margin: 43px 10%;
+      width: 324px;
+    }
+    .program-remedial-judul{
+      max-width: none;
+      text-align: left;
+    }
+    .program-remedial-judul h1{
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .program-remedial-judul p{
+      font-size: 15px;
+    }
+    .flex-items-program{
+      width: 324px;
+    }
+    .flex-items-program-image img{
+      width: 324px;
+      height: 231px;
+    }
+    .flex-items-program-desc h2{
+      font-size: 20px;
+    }
+    .flex-items-program-desc > p{
+      font-size: 14px;
+    }
+    .flex-items-program-benefits{
+      font-size: 14px;
+    }
+    .flex-items-program-benefits p{
+      margin-left: 12px;
+    }
+    .flex-items-program-benefits-harga{
+      font-size: 18px;
+      margin: 2px 0px 30px 0px;
+    }
+    .flex-items-program-button a{
+      padding: 15px 0px;
+      font-size: 16px;
+    }
+  }

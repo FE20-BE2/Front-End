@@ -1,0 +1,81 @@
+.first-section {
+    width: 100%;
+    margin-top: 0;
+    /* position: absolute; */
+    background-image: url(https://childless-bypass.000webhostapp.com/wp-content/uploads/2023/03/HeroBanner.png);
+    background-position: 85% 120%;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #description {
+    text-align: center;
+    margin: 24px 0px 0px 0px;
+  }
+  
+  .text-HeroBanner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    font-family: "Lato", sans-serif;
+  }
+  .hero-judul {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-judul h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 56px;
+  }
+  .hero-judul p {
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+  }
+  #text-HeroBanner-button {
+    margin-top: 32px;
+  }
+  
+  #link{
+    padding: 16px 87px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .button{
+    background-color: #F2F2F2;
+    padding: 16px 87px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  @media (max-width: 1090px) {
+    .hero-judul h1 {
+      font-size: 24px;
+    }
+    .hero-judul p {
+      font-size: 12px;
+    }
+    #link{
+      padding: 12px 46px;
+      font-size: 13.5px;
+    }
+    #text-HeroBanner-button {
+      margin-top: 24px;
+    }
+    .text-HeroBanner {
+      margin: 0px 30px;
+    }
+    .first-section {
+      background-position: 75% 120%;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  }
