@@ -43,65 +43,6 @@ function Detailpembayaran() {
     <Container>
       <p className="text-center fw-bold mt-5 mb-6">DETAIL PEMBAYARAN</p>
       <Row>
-        <Col sm={4}>
-          <Image src={off} alt="" style={{ maxWidth: "100%" }} />
-          <Card className="mt-3 shadow mt-4 p-3 mb-3 bg-body-white rounded">
-            <Card.Body>
-              <Card.Title>
-                <RiCoupon4Fill /> Do you have coupon code?
-              </Card.Title>
-              <InputGroup className="mb-2">
-                <Form.Control type="Text" />
-                <Button variant="outline-secondary">Button</Button>
-              </InputGroup>
-            </Card.Body>
-          </Card>
-          <Card className="shadow mt-4 p-3 mb-3 bg-body-white rounded">
-            <Card.Body>
-              <Card.Title>REMDIAL OFFLINE</Card.Title>
-              <Card.Subtitle>Remedial House, Jakarta Timur</Card.Subtitle>
-              <hr />
-              <Card.Title>Benefits</Card.Title>
-              <Card.Text>
-                Tersedia 3 Mata Pelajaran <br />
-                Belajar di Ruang Kelas <br />
-                Interaksi Langsung dengan Mentor <br />
-                Sertifikat
-                <br />
-                <span
-                  className="fw-bold fw-bold d-flex align-items-center justify-content-end"
-                  style={{ color: "#B30000" }}
-                >
-                  Rp. 550.000
-                </span>
-                <hr />
-                <div className="align-items-center">
-                  <label className="d-flex align-items-center justify-content-between">
-                    Discount
-                    <span className="fw-bold" style={{ color: "#820000" }}>
-                      Rp. 20.000
-                    </span>
-                  </label>
-                  <label className="d-flex align-items-center justify-content-between">
-                    Duration
-                    <span className="fw-bold" style={{ color: "#820000" }}>
-                      6 Months
-                    </span>
-                  </label>
-                </div>
-                <hr />
-                <div className="total">
-                  <label className="fw-bold d-flex align-items-center justify-content-between ">
-                    Total
-                    <span className="fw-bold" style={{ color: "#820000" }}>
-                      Rp. 530.000
-                    </span>
-                  </label>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
         <Col sm={8} className="p-2 shadow-sm p-2 mb-5 bg-body-white rounded">
           <Form>
             <Form.Group className="mb-3">
@@ -184,6 +125,65 @@ function Detailpembayaran() {
               </Row>
             </Form.Group>
           </Form>
+        </Col>
+        <Col sm={4}>
+          <Image src={off} alt="" style={{ maxWidth: "100%" }} />
+          <Card className="mt-3 shadow mt-4 p-3 mb-3 bg-body-white rounded">
+            <Card.Body>
+              <Card.Title>
+                <RiCoupon4Fill /> Do you have coupon code?
+              </Card.Title>
+              <InputGroup className="mb-2">
+                <Form.Control type="Text" />
+                <Button variant="outline-secondary">Button</Button>
+              </InputGroup>
+            </Card.Body>
+          </Card>
+          <Card className="shadow mt-4 p-3 mb-3 bg-body-white rounded">
+            <Card.Body>
+              <Card.Title>REMDIAL OFFLINE</Card.Title>
+              <Card.Subtitle>Remedial House, Jakarta Timur</Card.Subtitle>
+              <hr />
+              <Card.Title>Benefits</Card.Title>
+              <Card.Text>
+                Tersedia 3 Mata Pelajaran <br />
+                Belajar di Ruang Kelas <br />
+                Interaksi Langsung dengan Mentor <br />
+                Sertifikat
+                <br />
+                <span
+                  className="fw-bold fw-bold d-flex align-items-center justify-content-end"
+                  style={{ color: "#B30000" }}
+                >
+                  Rp. 550.000
+                </span>
+                <hr />
+                <div className="align-items-center">
+                  <label className="d-flex align-items-center justify-content-between">
+                    Discount
+                    <span className="fw-bold" style={{ color: "#820000" }}>
+                      Rp. 20.000
+                    </span>
+                  </label>
+                  <label className="d-flex align-items-center justify-content-between">
+                    Duration
+                    <span className="fw-bold" style={{ color: "#820000" }}>
+                      6 Months
+                    </span>
+                  </label>
+                </div>
+                <hr />
+                <div className="total">
+                  <label className="fw-bold d-flex align-items-center justify-content-between ">
+                    Total
+                    <span className="fw-bold" style={{ color: "#820000" }}>
+                      Rp. 530.000
+                    </span>
+                  </label>
+                </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
