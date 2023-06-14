@@ -1,7 +1,9 @@
 import Navbar from "./components/Navbar"
 import KelasOffline from "./components/Kelasoffline"
+// import KelasOnline from "./components/KelasOnline"
 import Footer from "./components/Footer"
 import { useEffect } from "react"
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
 
@@ -27,6 +29,11 @@ function App() {
     <>
       <Navbar />
       <KelasOffline />
+      {/* <Router>
+        <Switch>
+          <Route path="/KelasOnline" exact component={KelasOnline} />
+        </Switch>
+      </Router> */}
       <Footer />
     </>
   )
