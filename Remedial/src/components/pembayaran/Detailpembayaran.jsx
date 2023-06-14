@@ -42,6 +42,7 @@ function Detailpembayaran() {
   return (
     <Container>
       <p className="text-center fw-bold mt-5 mb-6">DETAIL PEMBAYARAN</p>
+      npm{" "}
       <Row>
         <Col sm={8} className="p-2 shadow-sm p-2 mb-5 bg-body-white rounded">
           <Form>
