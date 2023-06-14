@@ -6,6 +6,6 @@ import Navbar from "./components/pages/Navbar.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={<Navbar />} />
+    <App />
   </React.StrictMode>
 );

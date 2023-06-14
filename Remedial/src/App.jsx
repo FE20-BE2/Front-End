@@ -1,33 +1,33 @@
-// import Navbar from "./components/pages/Navbar";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { useEffect } from "react";
-// import Detailpembayaran from "./components/pembayaran/Detailpembayaran";
-// import Metodepembayaran from "./components/pembayaran/Metodepembayaran";
+import Navbar from "./components/pages/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from "react";
+import Detailpembayaran from "./components/pembayaran/Detailpembayaran";
+import Metodepembayaran from "./components/pembayaran/Metodepembayaran";
 
-// function App() {
-//   useEffect(() => {
-//     const script = document.createElement("script");
+function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
 
-//     script.src = "./src/js/script.js";
+    script.src = "./src/js/script.js";
 
-//     script.async = true;
+    script.async = true;
 
-//     script.crossOrigin = "anonymous";
+    script.crossOrigin = "anonymous";
 
-//     document.body.appendChild(script);
+    document.body.appendChild(script);
+    console.log("as");
+    return () => {
+      // clean up the script when the component in unmounted
+      document.body.removeChild(script);
+    };
+  }, []);
 
-//     return () => {
-//       // clean up the script when the component in unmounted
-//       document.body.removeChild(script);
-//     };
-//   }, []);
+  return (
+    <>
+      <Detailpembayaran />
+      {/* <Navbar /> */}
+    </>
+  );
+}
 
-//   return (
-//     // <>
-//     //   <Navbar />
-
-//   //   </>
-//   // );
-// }
-
-// export default App;
+export default App;

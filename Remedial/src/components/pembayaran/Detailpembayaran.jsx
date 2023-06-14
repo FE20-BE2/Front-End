@@ -10,7 +10,35 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { RiCoupon4Fill } from "react-icons/ri";
 import off from "../../assets/gambar/off.png";
 
+import Modal from "react-bootstrap/Modal";
+import { useState, useEffect } from "react";
+
 function Detailpembayaran() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    window.snap.pay("7dab5604-401e-4f4d-a007-aa0ee118a949");
+    console.log("handleShow");
+  };
+
+  useEffect(() => {
+    console.log("detail pembyrn");
+    const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
+
+    let scriptTag = document.createElement("script");
+    scriptTag.src = midtransScriptUrl;
+
+    const myMidtransClientKey = "SB-Mid-client-nJvTiHsulDHWqp-u";
+    scriptTag.setAttribute("data-client-key", myMidtransClientKey);
+
+    document.body.appendChild(scriptTag);
+
+    return () => {
+      document.body.removeChild(scriptTag);
+    };
+  }, []);
+
   return (
     <Container>
       <p className="text-center fw-bold mt-5 mb-6">DETAIL PEMBAYARAN</p>
@@ -133,7 +161,25 @@ function Detailpembayaran() {
               <Row>
                 <Col className="d-flex align-items-center justify-content-between">
                   <Button variant="outline-dark">Cencel</Button>
-                  <Button variant="outline-dark">Daftar</Button>
+                  <Button variant="outline-dark" onClick={handleShow}>
+                    Daftar
+                  </Button>
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Remedial Offline</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      Woohoo, you are reading this text in a modal!
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        Close
+                      </Button>
+                      <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </Col>
               </Row>
             </Form.Group>
