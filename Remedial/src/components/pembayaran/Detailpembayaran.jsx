@@ -6,8 +6,6 @@ import Image from "react-bootstrap/Image";
 import Card from "react-bootstrap/Card";
 import { FormLabel, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import { RiCoupon4Fill } from "react-icons/ri";
 import off from "../../assets/gambar/off.png";
 
 import Modal from "react-bootstrap/Modal";
@@ -18,7 +16,7 @@ function Detailpembayaran() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    window.snap.pay("7dab5604-401e-4f4d-a007-aa0ee118a949");
+    window.snap.pay("e5d76756-510c-4afd-84f3-e1772f7c0ff9");
     console.log("handleShow");
   };
 
@@ -129,17 +127,6 @@ function Detailpembayaran() {
         </Col>
         <Col sm={4}>
           <Image src={off} alt="" style={{ maxWidth: "100%" }} />
-          <Card className="mt-3 shadow mt-4 p-3 mb-3 bg-body-white rounded">
-            <Card.Body>
-              <Card.Title>
-                <RiCoupon4Fill /> Do you have coupon code?
-              </Card.Title>
-              <InputGroup className="mb-2">
-                <Form.Control type="Text" />
-                <Button variant="outline-secondary">Button</Button>
-              </InputGroup>
-            </Card.Body>
-          </Card>
           <Card className="shadow mt-4 p-3 mb-3 bg-body-white rounded">
             <Card.Body>
               <Card.Title>REMDIAL OFFLINE</Card.Title>

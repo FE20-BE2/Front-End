@@ -1,8 +1,9 @@
-import Navbar from "./components/pages/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import Detailpembayaran from "./components/pembayaran/Detailpembayaran";
-import Metodepembayaran from "./components/pembayaran/Metodepembayaran";
+import Dashboard from "./components/pages/Dashboard";
+import { Routes } from "react-router-dom";
+import Sidebar from "./components/dashboard/artikel/Sidebar";
 
 function App() {
   useEffect(() => {
@@ -24,8 +25,7 @@ function App() {
 
   return (
     <>
-      <Detailpembayaran />
-      {/* <Navbar /> */}
+      <Sidebar />
     </>
   );
 }
