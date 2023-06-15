@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/kelasOffline.css";
+import "../css/kelas.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/logo/logo2.png';
 import fb from '../assets/footer/fb.png'

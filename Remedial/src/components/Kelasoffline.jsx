@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/kelasOffline.css";
+import "../css/kelas.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import kelasoffline from '../assets/image/gambar2.png';

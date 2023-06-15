@@ -11,16 +11,16 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 
-function CardOffline() {
-  const [dataKelasoffline, setDataKelasoffline] = useState([]);
+function CardOnline() {
+  const [dataKelasonline, setDataKelasonline] = useState([]);
   const fetchData = async () => {
     try {
       const response = await fetch(
         "https://api-remedial-production-ecd6.up.railway.app/api/user/kelas-offline"
       );
       const data = await response.json();
-      setDataKelasoffline(data.kelas);
-      console.log("data kelasoffline", data);
+      setDataKelasonline(data.kelas);
+      console.log("data kelasonline", data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -40,19 +40,20 @@ function CardOffline() {
                   <Card.Title>Tentang Kelas</Card.Title>
                 </h5>
                 <Card.Text>
-                  Metode pembelajaran yang dilakukan secara langsung dan tidak
-                  melalui jaringan internet. Metode ini melibatkan interaksi
-                  langsung antara guru dan siswa dalam sebuah ruang kelas atau
-                  lingkungan belajar yang telah disiapkan.
+                  Metode pembelajaran yang dilakukan melalui jaringan internet.
+                  Metode ini dapat dilakukan secara live atau asinkronus (tidak
+                  live) dengan memanfaatkan berbagai platform belajar seperti
+                  aplikasi pembelajaran, website, atau platform video
+                  conferencing.
                 </Card.Text>
                 <p>
-                  <img src={vector} alt="" /> Tersedia 3 Mata Pelajaran
+                  <img src={vector} alt="" /> Tersedia 10 Mata Pelajaran
                 </p>
                 <p>
-                  <img src={vector2} alt="" /> Belajar di Ruang Kelas
+                  <img src={vector2} alt="" /> Belajar Lebih Fleksibel
                 </p>
                 <p>
-                  <img src={vector3} alt="" /> Interaksi Langsung dengan Mentor
+                  <img src={vector3} alt="" /> Forum Diskusi Online
                 </p>
                 <p>
                   <img src={vector4} alt="" /> Sertifikat
@@ -71,9 +72,9 @@ function CardOffline() {
                     id="dropdown-button"
                     title="Pilih Pelajaran RemidiaL"
                   >
-                    {dataKelasoffline.map((kelasoffline) => (
-                      <Dropdown.Item href="#/action-1" key={kelasoffline._id}>
-                        {kelasoffline.matkul}
+                    {dataKelasonline.map((kelasonline) => (
+                      <Dropdown.Item href="#/action-1" key={kelasonline._id}>
+                        {kelasonline.matkul}
                       </Dropdown.Item>
                     ))}
                   </DropdownButton>
@@ -83,24 +84,24 @@ function CardOffline() {
                     id="dropdown-button"
                     title="Pilih Lokasi RemidiaL"
                   >
-                    {dataKelasoffline.map((kelasoffline) => (
-                      <Dropdown.Item href="#/action-1" key={kelasoffline._id}>
-                        {kelasoffline.lokasi}
+                    {dataKelasonline.map((kelasonline) => (
+                      <Dropdown.Item href="#/action-1" key={kelasonline._id}>
+                        {kelasonline.lokasi}
                       </Dropdown.Item>
                     ))}
                   </DropdownButton>
                 </div>
 
                 <Card.Text>Tanggal Mulai Kelas</Card.Text>
-                {dataKelasoffline.map((kelasoffline) => (
-                  <Button variant="light" key={kelasoffline._id} className="">
-                    {kelasoffline.tanggalMulai}
+                {dataKelasonline.map((kelasonline) => (
+                  <Button variant="light" key={kelasonline._id} className="">
+                    {kelasonline.tanggalMulai}
                   </Button>
                 ))}
                 <Card.Text className="my-2">Waktu Mulai Kelas</Card.Text>
-                {dataKelasoffline.map((kelasoffline) => (
-                  <Button variant="light" key={kelasoffline._id} className="">
-                    {kelasoffline.waktu}
+                {dataKelasonline.map((kelasonline) => (
+                  <Button variant="light" key={kelasonline._id} className="">
+                    {kelasonline.waktu}
                   </Button>
                 ))}
 
@@ -113,23 +114,25 @@ function CardOffline() {
 
           <div className="col">
             <Card body>
-            <h5>
-                  <Card.Title>Mentor</Card.Title>
-                </h5>
-            {dataKelasoffline.map((kelasoffline) => ( 
-            <Card style={{ width: "20rem" }} key={kelasoffline._id} className="px-4"> 
-              <Card.Body>
-                <Card.Img variant="top" src={kelasoffline.mentor.photo}/>
-                <h5>
-                  <Card.Title>{kelasoffline.mentor.nama}</Card.Title>
-                </h5>
-                <Card.Text>{kelasoffline.mentor.spesialisasi}</Card.Text>
-                <Card.Text>{kelasoffline.mentor.email}</Card.Text>
-               
-              </Card.Body>
-            </Card>
-            
-          ))}
+              <h5>
+                <Card.Title>Mentor</Card.Title>
+              </h5>
+              {dataKelasonline.map((kelasonline) => (
+                <Card
+                  style={{ width: "20rem" }}
+                  key={kelasonline._id}
+                  className="px-4"
+                >
+                  <Card.Body>
+                    <Card.Img variant="top" src={kelasonline.mentor.photo} />
+                    <h5>
+                      <Card.Title>{kelasonline.mentor.nama}</Card.Title>
+                    </h5>
+                    <Card.Text>{kelasonline.mentor.spesialisasi}</Card.Text>
+                    <Card.Text>{kelasonline.mentor.email}</Card.Text>
+                  </Card.Body>
+                </Card>
+              ))}
             </Card>
           </div>
         </div>
@@ -138,4 +141,4 @@ function CardOffline() {
   );
 }
 
-export default CardOffline;
+export default CardOnline;
