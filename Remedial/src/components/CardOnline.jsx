@@ -117,11 +117,12 @@ function CardOnline() {
               <h5>
                 <Card.Title>Mentor</Card.Title>
               </h5>
+              <div className="row row-cols-1 row-cols-md-2 g-4">
               {dataKelasonline.map((kelasonline) => (
                 <Card
                   style={{ width: "20rem" }}
                   key={kelasonline._id}
-                  className="px-4"
+                  className="mx-4 px-4"
                 >
                   <Card.Body>
                     <Card.Img variant="top" src={kelasonline.mentor.photo} />
@@ -133,6 +134,8 @@ function CardOnline() {
                   </Card.Body>
                 </Card>
               ))}
+              </div>
+              
             </Card>
           </div>
         </div>

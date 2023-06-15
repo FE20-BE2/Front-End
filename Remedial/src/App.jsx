@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import KelasOffline from "./components/Kelasoffline"
 // import KelasOnline from "./components/KelasOnline"
+// import ViewProfile from "./components/ViewProfile"
 import Footer from "./components/Footer"
 import { useEffect } from "react"
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       <Navbar />
+      {/* <ViewProfile/> */}
       <KelasOffline />
       {/* <Router>
         <Switch>

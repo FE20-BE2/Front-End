@@ -113,23 +113,27 @@ function CardOffline() {
 
           <div className="col">
             <Card body>
-            <h5>
-                  <Card.Title>Mentor</Card.Title>
-                </h5>
-            {dataKelasoffline.map((kelasoffline) => ( 
-            <Card style={{ width: "20rem" }} key={kelasoffline._id} className="px-4"> 
-              <Card.Body>
-                <Card.Img variant="top" src={kelasoffline.mentor.photo}/>
-                <h5>
-                  <Card.Title>{kelasoffline.mentor.nama}</Card.Title>
-                </h5>
-                <Card.Text>{kelasoffline.mentor.spesialisasi}</Card.Text>
-                <Card.Text>{kelasoffline.mentor.email}</Card.Text>
-               
-              </Card.Body>
-            </Card>
-            
-          ))}
+              <h5>
+                <Card.Title>Mentor</Card.Title>
+              </h5>
+              <div className="row row-cols-1 row-cols-md-2 g-4">
+                {dataKelasoffline.map((kelasoffline) => (
+                  <Card
+                    style={{ width: "20rem" }}
+                    key={kelasoffline._id}
+                    className="mx-4 px-4"
+                  >
+                    <Card.Body>
+                      <Card.Img variant="top" src={kelasoffline.mentor.photo} />
+                      <h5>
+                        <Card.Title>{kelasoffline.mentor.nama}</Card.Title>
+                      </h5>
+                      <Card.Text>{kelasoffline.mentor.spesialisasi}</Card.Text>
+                      <Card.Text>{kelasoffline.mentor.email}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                ))}
+              </div>
             </Card>
           </div>
         </div>
