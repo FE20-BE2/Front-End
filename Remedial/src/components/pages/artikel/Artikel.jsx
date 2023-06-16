@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Button, Row } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 const Artikel = () => {
   const [data, setData] = useState([]);
 
-  async function getUser() {
+  async function getArtikel() {
     try {
       const response = await axios.get(
         "https://api-remedial-production-ecd6.up.railway.app/api/articles"
@@ -33,26 +32,34 @@ const Artikel = () => {
   }
 
   useEffect(() => {
-    getUser();
+    getArtikel();
   }, []);
   return (
     <div>
-      <NavLink to="/create-artikel">
-        <Button>Tambahkan</Button>{" "}
-      </NavLink>
-      <Row xs={1} md={4} className="g-4">
+      <div className="m-4 d-flex justify-content-between">
+        <h3>ARTIKEL</h3>
+        <NavLink to="/create-artikel">
+          <Button>Tambahkan</Button>
+        </NavLink>
+      </div>
+
+      <Row xs={1} md={3} className="g-4">
         {data.map((artikel) => (
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={artikel.articleImgUrl} />
             <Card.Body>
               <Card.Title>{artikel.title}</Card.Title>
               <Card.Text>{artikel.content.slice(0, 100)}</Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">{artikel.releaseDate}</small>
             </Card.Footer>
-            <Button>Hapus</Button>
-            <Button>Edit</Button>
+            <Row>
+              <Col className="d-flex align-items-center justify-content-between">
+                <Button>Hapus</Button>
+                <Button>Edit</Button>
+              </Col>
+            </Row>
           </Card>
         ))}
       </Row>

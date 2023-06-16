@@ -54,7 +54,7 @@ function Detailpembayaran() {
       )
       .then(function (response) {
         console.log(response);
-        window.snap.pay("");
+        window.snap.pay("b2ae9ab2-2143-4af3-9561-8d56129bbd65");
       })
       .catch(function (error) {
         console.log(error);
@@ -127,22 +127,6 @@ function Detailpembayaran() {
                   <Button variant="outline-dark" onClick={pembayaran}>
                     Daftar
                   </Button>
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Remedial Offline</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      Woohoo, you are reading this text in a modal!
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        Close
-                      </Button>
-                      <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
                 </Col>
               </Row>
             </Form.Group>

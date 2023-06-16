@@ -31,10 +31,7 @@ const Sidebar = () => {
                   class="nav-link text-white fs-5"
                   aria-current="page"
                 >
-                  <span>
-                    <BiUserCircle className="mx-2" />
-                    Mentor
-                  </span>
+                  <span className="mx-2">Mentor</span>
                 </Link>
               </li>
               <li class="nav-item text-white fs-4">
