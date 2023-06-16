@@ -2,6 +2,7 @@ import "/src/css/SignUp.css";
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import registerGambar from "/src/assets/gambar/signup.jpg";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -80,7 +81,7 @@ const SignUp = () => {
         </button>
       </div>
       <div className="signupGambar">
-        <img src="./src/assets/gambar/signup.jpg" alt="Register" />
+        <img src={registerGambar} alt="Register" />
       </div>
     </div>
   );

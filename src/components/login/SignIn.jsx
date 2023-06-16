@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import "/src/css/SignIn.css";
+import loginGambar from "/src/assets/gambar/login.jpg";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ const SignIn = () => {
     <>
       <div className="signIn">
         <div className="loginGambar">
-          <img src="./src/assets/gambar/login.jpg" alt="Login" />
+          <img src={loginGambar} alt="Login" />
         </div>
         <div className="inputLogin">
           <div className="mid">
