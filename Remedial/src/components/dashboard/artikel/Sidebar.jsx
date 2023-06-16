@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiUserCircle } from "react-icons/bi";
 import "./Sidebar.css";
+import { Link, Outlet } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -16,37 +17,36 @@ const Sidebar = () => {
             <hr />
             <ul class="nav nav-pills flex-column">
               <li class="nav-item text-white fs-4">
-                <a
+                <Link
+                  to="/"
                   class="nav-link text-white fs-5"
-                  href="#"
                   aria-current="page"
                 >
                   <span className="ms-2">Artikel</span>
-                </a>
+                </Link>
               </li>
               <li class="nav-item text-white fs-4">
-                <a
+                <Link
+                  to="/mentor"
                   class="nav-link text-white fs-5"
-                  href="#"
                   aria-current="page"
                 >
                   <span>
                     <BiUserCircle className="mx-2" />
                     Mentor
                   </span>
-                </a>
+                </Link>
               </li>
               <li class="nav-item text-white fs-4">
-                <a
-                  class="nav-link text-white fs-5"
-                  href="#"
-                  aria-current="page"
-                >
+                <Link class="nav-link text-white fs-5" aria-current="page">
                   <span className="ms-2">Kelas</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
+        </div>
+        <div className="col">
+          <Outlet />
         </div>
       </div>
     </div>

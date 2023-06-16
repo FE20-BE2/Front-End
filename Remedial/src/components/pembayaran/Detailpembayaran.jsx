@@ -10,6 +10,7 @@ import off from "../../assets/gambar/off.png";
 
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Detailpembayaran() {
   const [show, setShow] = useState(false);
@@ -37,10 +38,32 @@ function Detailpembayaran() {
     };
   }, []);
 
+  async function pembayaran() {
+    console.log("PEMbayaran");
+    axios
+      .post(
+        "https://api-remedial-production-ecd6.up.railway.app/api/order/payment",
+        {
+          harga: 500000,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${"token"}`,
+          },
+        }
+      )
+      .then(function (response) {
+        console.log(response);
+        window.snap.pay("");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   return (
     <Container>
       <p className="text-center fw-bold mt-5 mb-6">DETAIL PEMBAYARAN</p>
-      npm{" "}
       <Row>
         <Col sm={8} className="p-2 shadow-sm p-2 mb-5 bg-body-white rounded">
           <Form>
@@ -101,7 +124,7 @@ function Detailpembayaran() {
               <Row>
                 <Col className="d-flex align-items-center justify-content-between">
                   <Button variant="outline-dark">Cencel</Button>
-                  <Button variant="outline-dark" onClick={handleShow}>
+                  <Button variant="outline-dark" onClick={pembayaran}>
                     Daftar
                   </Button>
                   <Modal show={show} onHide={handleClose}>

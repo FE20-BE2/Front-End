@@ -4,6 +4,7 @@ import Detailpembayaran from "./components/pembayaran/Detailpembayaran";
 import Dashboard from "./components/pages/Dashboard";
 import { Routes } from "react-router-dom";
 import Sidebar from "./components/dashboard/artikel/Sidebar";
+import Index from "./components/routes/Index";
 
 function App() {
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Sidebar />
+      <Index />
     </>
   );
 }
