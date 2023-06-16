@@ -1,0 +1,156 @@
+.six-section {
+    width: 100%;
+    margin-top: 0;
+    background-image: url(https://childless-bypass.000webhostapp.com/wp-content/uploads/2023/03/KaryaSiswa.png);
+    background-position: 85% 45%;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    
+  }
+  
+  .text-KaryaSiswa{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 0px 25%;
+  }
+  .KaryaSiswa-judul{
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+  .KaryaSiswa-judul h1{
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .karyaSiswa-desc{
+    font-size: 18px;
+    margin-top: 24px;
+  }
+  /* Slider */
+  .body{
+    padding: 0px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .direction button{
+    font-family: cursive;
+    font-weight: bold;
+    background-color: #ffffff;
+    border:none;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin:0 10px;
+  }
+  .direction button:hover{
+    background-color: #7c7c7c;
+  }
+  
+  .item{
+    border-radius: 8px;
+    width:380px;
+    height:303px;
+    
+    overflow: hidden;
+    transition: 0.5s;
+    margin:10px;
+    scroll-snap-align: start;
+  }
+  
+  .item-flex{
+    position: relative;
+    color: white;
+    display: flex;
+    place-items: end;
+    place-content: center;
+  }
+  .item-flex-desc1{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.521);
+    padding-bottom: 25px;
+  }
+  .item-flex-desc2{
+    text-align: left;
+    width: 380px;
+    padding: 10px 25px 0px;
+  }
+  .item-flex-desc2 h3{
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .item-flex-desc-img{
+    margin-top: 18px;
+    display: flex;
+    color: white;
+    align-items: center;
+  }
+  .item-flex-desc-img img{
+    margin-right: 8px;
+  }
+  
+  #list{
+    display: flex;
+    width:max-content;
+  }
+  #formList{
+    max-width: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: both;
+  }
+  #formList::-webkit-scrollbar{
+    display: none;
+  }
+  @media screen and (max-width: 1024px){
+    .item{
+        width: calc(33.3vw - 20px);
+    }
+    .direction{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .item{
+        width: calc(50vw - 20px);
+    }
+    .direction{
+        display: none;
+    }
+  }
+  @media (max-width: 1090px){
+    .text-KaryaSiswa{
+      place-items: normal start;
+      padding: 0 24px;
+    }
+    .KaryaSiswa-judul h1{
+      font-size: 32px;
+      text-align: left;
+    }
+    .karyaSiswa-desc{
+      font-size: 14px;
+      text-align:left;
+    }
+    #formList{
+      max-height: 227px;
+    }
+    #list{
+      max-height: 227px;
+    }
+    .item{
+      max-height: 227px;
+    }
+    .item-flex-desc2{
+      width: fit-content;
+    }
+    .item-flex-desc2 h3{
+      font-size: 20px;
+    }
+  }

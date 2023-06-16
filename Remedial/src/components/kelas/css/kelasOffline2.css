@@ -1,0 +1,15 @@
+@media (max-width: 1090px){
+    .offline-mid{
+        display: grid;
+        width: 100%;
+        height: max-content;
+        place-items: center;
+        place-content: center;
+    }
+    .col-lg-6 img{
+        width: 250px;
+    }
+    .text-muted{
+        max-width: 180px;
+    }
+}

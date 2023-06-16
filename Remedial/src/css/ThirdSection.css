@@ -1,0 +1,135 @@
+.third-section {
+    width: 100%;
+    margin-top: 0;
+    background-image: url(https://childless-bypass.000webhostapp.com/wp-content/uploads/2023/03/Keunggulan.png);
+    background-position: 85% 45%;
+    background-size: cover;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .text-Keunggulan {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    /* margin-top: 64px; */
+  }
+  .keunggulan-judul h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  .keunggulan-desc {
+    font-size: 18px;
+    font-weight: normal;
+    color: rgb(219, 219, 219);
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: stretch;
+    margin-top: 52px;
+    font-family: "Lato", sans-serif;
+  }
+  .flex-items{
+    height: 338px;
+    width: 239px;
+    background: #F2F2F2;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+  }
+  .flex-items:nth-child(1) {
+    margin-top: 35px;
+  }
+  
+  .flex-items:nth-child(2) {
+    margin: 0px 43px;
+  }
+  
+  .flex-items:nth-child(3) {
+    margin-top: 35px;
+  }
+  .flex-items-circle{
+    width: 145px;
+    height: 145px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: grid;
+    place-items: center;
+  }
+  .flex-items-text{
+    margin-top: 24px;
+    color: black;
+    padding: 0px 25px;
+  }
+  .flex-items-text h2{
+    font-size: 24px;
+  }
+  .flex-items-text p{
+    padding-top: 8px;
+    color: #6A6A6A;
+    font-size: 16px;
+  }
+  @media (max-width: 1090px){
+    .third-section{
+      background-position: 45% 45%;
+      height: max-content;
+    }
+    .flex-items{
+      height: 302px;
+      width: 214px;
+    }
+    .flex-container{
+      margin-top: 24px;
+      display: grid;
+      place-content: center;
+      place-items: center;
+    }
+    .flex-items-circle{
+      width: 129px;
+      height: 129px;
+    }
+    .flex-items-circle img{
+      width: 100px;
+    }
+    .flex-items:nth-child(1){
+      margin-top: 0px;
+      margin-bottom: 48px;
+    }
+    .flex-items:nth-child(2){
+      margin: 0px 0px 48px 0px;
+    }
+    .flex-items:nth-child(3){
+      margin: 0px 0px 48px 0px;
+    }
+    .keunggulan-judul{
+      margin: 34px 20px 0px 20px;
+    }
+    .keunggulan-judul h1{
+      font-size: 32px;
+    }
+    .keunggulan-desc{
+      font-size: 14px;
+      padding-left: 0%;
+      padding-right: 0%;
+    }
+    .flex-items-text h2{
+      font-size: 20px;
+    }
+    .flex-items-text p{
+      font-size: 14px;
+    }
+  }
