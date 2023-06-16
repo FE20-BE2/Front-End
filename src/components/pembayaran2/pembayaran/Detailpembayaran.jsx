@@ -17,7 +17,7 @@ function Detailpembayaran() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    window.snap.pay("dbf6ee17-cadf-4ba0-aab0-bf6ee0ea27da");
+    window.snap.pay("64b28cbd-cbc0-4d34-994a-fec571deff46");
     console.log("handleShow");
   };
 
@@ -54,7 +54,7 @@ function Detailpembayaran() {
       )
       .then(function (response) {
         console.log(response);
-        window.snap.pay("dbf6ee17-cadf-4ba0-aab0-bf6ee0ea27da");
+        window.snap.pay("64b28cbd-cbc0-4d34-994a-fec571deff46");
       })
       .catch(function (error) {
         console.log(error);
