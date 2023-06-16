@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import KelasOffline from "/src/components/kelas/Kelasoffline"
 import KelasOnline from "/src/components/kelas/KelasOnline"
 import ViewProfile from "/src/components/kelas/ViewProfile"
-import DetailPembayaran from "/src/components/pembayaran2/routes/Index"
+import DetailPembayaran from "/src/components/pembayaran2/pembayaran/Detailpembayaran"
 import Admin from "/src/components/pembayaran2/routes/Index"
 
 const ProtectedRoute = ({element }) => {
