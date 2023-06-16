@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./css/footer.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '/src/assets/logo/logo2.png';
 import fb from '/src/assets/footer/fb.png'
@@ -12,7 +12,7 @@ function Footer () {
         <div id="footer" className="py-4">
             <div className="container">
             <div className="row">
-                <div className="col-md-4 col-lg-6">
+                <div className="col-md-4 ">
                     <a className="d-block mb-3" href="#"><img className="logo" src={Logo} alt="logo1" border="0"/></a>
                     <p className="py-4">Remedial merupakan kegiatan yang akan Serrum 
                         lakukan selama 1 tahun di 2019. Kegiatan

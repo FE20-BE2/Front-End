@@ -1,0 +1,8 @@
+.container.row .col-md-4.col-lg-6 img .px-2{
+    width: unset;
+}
+@media (max-width: 1090px){
+    .col-lg-6 img .px-2{
+        width: unset;
+    }
+}
