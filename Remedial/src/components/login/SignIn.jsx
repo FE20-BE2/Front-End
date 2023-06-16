@@ -1,41 +1,21 @@
-import { useState } from "react";
-import axios from "axios";
-import { useCookies } from "react-cookie";
+import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import "/src/css/SignIn.css";
 
-const SignIn = ({ onLogin }) => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [, setCookie] = useCookies();
+  const { isLoggedIn, handleLogin } = useContext(AuthContext);
+  
 
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post(
-        "https://api-remedial-production-ecd6.up.railway.app/api/users/signin",
-        {
-          email,
-          password,
-        }
-      );
-      const { token, username } = response.data;
-
-      // Set cookie dengan nama pengguna dan masa berlaku selama 1 jam
-      setCookie("token", token, {
-        path: "/",
-        expires: new Date(Date.now() + 60 * 60 * 1000),
-      });
-      setCookie("username", username, {
-        path: "/",
-        expires: new Date(Date.now() + 60 * 60 * 1000),
-      });
-
-      // Panggil fungsi onLogin dengan nama pengguna
-      onLogin(username);
-    } catch (error) {
-      setError("Username or password is incorrect.");
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(email, password);
   };
 
   return (
@@ -45,14 +25,15 @@ const SignIn = ({ onLogin }) => {
           <img src="./src/assets/gambar/login.jpg" alt="Login" />
         </div>
         <div className="inputLogin">
-          <h1>Selamat Datang!</h1>
-          {error && <p>{error}</p>}
           <div className="mid">
+            <form onSubmit={handleSubmit}>
+            <h1>Selamat Datang!</h1>
             <label>Email</label>
             <input
               type="email"
               placeholder="Email"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
             <label>Password</label>
@@ -60,9 +41,11 @@ const SignIn = ({ onLogin }) => {
               type="password"
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="tombolLogin" onClick={handleLogin}>Sign In</button>
+            <button className="tombolLogin" type="submit">Sign In</button>
+            </form>
           </div>
         </div>
       </div>

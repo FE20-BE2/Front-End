@@ -1,5 +1,6 @@
 import React from "react";
 import "/src/css/FiveSection.css";
+import { NavLink } from "react-router-dom";
 
 function FiveSection() {
   return (
@@ -44,7 +45,7 @@ function FiveSection() {
                 <p>RP. 250.000</p>
               </div>
               <div className="flex-items-program-button">
-                <a href="https://skilvul.com" id="link">Selengkapnya</a>
+              <NavLink to="/KelasOnline" id="link">Selengkapnya</NavLink>
               </div>
             </div>
           </div>
@@ -78,7 +79,7 @@ function FiveSection() {
                 <p>RP. 550.000</p>
               </div>
               <div className="flex-items-program-button">
-                <a href="https://skilvul.com" id="link">Selengkapnya</a>
+                <NavLink to="/KelasOffline" id="link">Selengkapnya</NavLink>
               </div>
             </div>
           </div>

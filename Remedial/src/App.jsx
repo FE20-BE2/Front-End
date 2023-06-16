@@ -1,13 +1,40 @@
+import React from 'react';
 import Navbar from "./components/Navbar";
 import LandingPage from "./components/LandingPage";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider, AuthContext } from '/src/components/login/AuthContext';
 import SignUp from "./components/login/SignUp"
 import SignIn from "./components/login/SignIn"
+import Artikel from "/src/components/artikelFile/Artikel"
+import AllArtikel from "/src/components/artikelFile/AllArtikel"
 import { useEffect } from "react";
-import { useState } from 'react';
-import { useCookies } from 'react-cookie';
+import KelasOffline from "/src/components/kelas/Kelasoffline"
+import KelasOnline from "/src/components/kelas/KelasOnline"
+import ViewProfile from "/src/components/kelas/ViewProfile"
+import DetailPembayaran from "/src/components/pembayaran2/routes/Index"
+import Admin from "/src/components/pembayaran2/routes/Index"
 
-function App() {
+const ProtectedRoute = ({element }) => {
+  const { isLoggedIn } = React.useContext(AuthContext);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/SignIn" />;
+  }
+
+  return element;
+};
+
+const PrivateRoute = ({element }) => {
+  const { isLoggedIn } = React.useContext(AuthContext);
+
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
+
+  return element;
+};
+
+const App = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -26,45 +53,27 @@ function App() {
     };
   }, []);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [cookies, setCookie, removeCookie] = useCookies(['token', 'username']);
-
-  useEffect(() => {
-    // Cek apakah token ada dalam cookie
-    if (cookies.token && cookies.username && !isLoggedIn) {
-      setIsLoggedIn(true);
-      setUsername(cookies.username);
-    }
-  }, [cookies, isLoggedIn]);
-
-  const handleLogin = (name) => {
-    setIsLoggedIn(true);
-    setUsername(name);
-
-    const expirationDate = new Date(Date.now() + 60 * 60 * 1000);
-    setCookie('token', 'your-token-value', { path: '/', expires: expirationDate });
-    setCookie('username', name, { path: '/', expires: expirationDate });
-  };
-
-  const handleLogout = () => {
-    // Hapus cookie dan muat ulang halaman
-    removeCookie('token');
-    removeCookie('username');
-    window.location.reload();
-  };
 
   return (
-      <Router>
-        <Navbar isLoggedIn={isLoggedIn} username={username} onLogout={handleLogout}/>
-        
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/SignIn" element={<SignIn />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navbar/>
+            <Routes>
+              <Route exact path="/AllArtikel" element={<AllArtikel />} />
+              <Route path="/Artikel/:id" element={<Artikel />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/KelasOffline" element={<KelasOffline />} />
+              <Route path="/KelasOnline" element={<KelasOnline />} />
+              <Route path="/SignUp" element={<PrivateRoute element={<SignUp />} />} />
+              <Route path="/SignIn" element={<PrivateRoute element={<SignIn />} />} />
+              <Route path="/ViewProfile" element={<ProtectedRoute element={<ViewProfile />} />} />
+              <Route path="/DetailPembayaran" element={<ProtectedRoute element={<DetailPembayaran />} />} />
+              <Route path="/Admin " element={<ProtectedRoute element={<Admin  />} />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+      
   );
-}
+};
 
 export default App;

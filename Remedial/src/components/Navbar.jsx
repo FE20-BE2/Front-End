@@ -1,27 +1,22 @@
-import React from "react";
+import React, { useContext } from 'react';
 import "../css/navbar.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo/Logo.png";
 import iconDown from "../assets/icon/icon-wrapper.png";
 import hamburgerMenu from "../assets/icon/HamburgerMenu.png";
-import { useCookies } from "react-cookie";
+import { AuthContext } from './login/AuthContext';
 
-const Navbar = ({isLoggedIn, username}) => {
-    const [cookies, , removeCookie] = useCookies(['token', 'username']); // Cek apakah terdapat token cookie
-  const handleLogout = () => {
-    // Hapus cookie dan muat ulang halaman
-    removeCookie('token');
-    removeCookie('username');
-    window.location.reload();
-  };
+const Navbar = () => {
+  const { isLoggedIn, handleLogout, getUsernameFromCookie } = useContext(AuthContext);
+  const username = getUsernameFromCookie();
 
   return (
-    <nav>
+    <nav >
       <NavLink to={"/"}>
-        <img className="logo" src={Logo} alt="logo" />
+        <img className="logo-remedial" src={Logo} alt="logo" />
       </NavLink>
 
-      <ul className="navbar">
+      <ul className="navbar-new">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
@@ -38,20 +33,21 @@ const Navbar = ({isLoggedIn, username}) => {
           <NavLink id="kelas">
             Kelas <img src={iconDown} alt="" />
           </NavLink>
-          <ul className="dropdown">
+          <ul className="dropdown-kelas">
             <li>
-              <NavLink id="dropdown">Kelas Offline</NavLink>
+              <NavLink to="/KelasOffline" id="dropdown">Kelas Offline</NavLink>
             </li>
             <li>
-              <NavLink id="dropdown">Kelas Online</NavLink>
+              <NavLink to="/KelasOnline" id="dropdown">Kelas Online</NavLink>
             </li>
           </ul>
         </li>
         <li>
-            {!isLoggedIn ? (<NavLink to="/SignIn">Sign In</NavLink>) : (
-                <>
-                    <NavLink to="/"><span className="afterlogin">{username}</span></NavLink>
-                </>
+            {isLoggedIn ? (
+            
+            <NavLink className="afterlogin" to="/ViewProfile">{username}</NavLink>
+            ) : (
+              <NavLink to="/SignIn">Sign In</NavLink>
             )}
           
         </li>

@@ -1,115 +1,157 @@
-.seven-section{
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-  }
-  .seven-section h1{
-    margin: 82px 0 0 110px;
-    font-size: 40px;
-  }
-  .container{
-    margin: 20px 110px 0;
-  }
-  .info{
-    display: flex;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  .info p:nth-child(2){
-    padding-left: 80px;
-  }
-  .desc{
-    display: flex;
-    align-items: center;
-    gap: 96px;
-  }
-  .heading{
-    display: grid;
-    margin-top: 20px;
-    max-width: 1300px;
-  }
-  .heading h2{
-    font-size: 32px;
-  }
-  .heading p{
-    font-size: 18px;
-    text-align: justify;
-    margin-top: 16px;
-  }
-  .heading .desc-p{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .gambar img{
-    max-height: 324px;
-  }
-  .flex-seven{
-    display: flex;
-    align-items: center;
-  }
-  .flex-seven p{
-    font-size: 20px;
-  }
-  .flex-seven p:nth-child(1){
-    background-color: #EAEAEA;
-    margin-right: 48px;
-    padding: 8px 16px;
-    border-radius: 25px;
-  }
-  .line{
-    margin-top: 72px;
-    height: 2px;
-    border-radius: 5px;
-    width: 100%;
-    background-color: #E3E3E3;
-  }
-  @media (max-width: 1090px){
-    .seven-section h1{
-      font-size: 24px;
-      margin: 28px 24px 0;
-    }
-    .info p{
-      font-size: 12px;
-    }
-    .info p:nth-child(2){
-      padding-left: 19px;
-    }
-    .heading h2{
-      font-size: 16px;
-    }
-    .container{
-      margin: 22px 20px 16px 20px;
-    }
-    .desc{
-      gap: 10px;
-    }
-    .heading .desc-p{
-      display: none;
-    }
-    .gambar img{
-      max-height: 135px;
-      max-width: 135px;
-    }
-    .flex-seven p:nth-child(1){
-      margin-right: 8px;
-    }
-    .flex-seven p{
-      font-size: 14px;
-      margin-top: 12px;
-    }
-    .heading{
-      max-width: 209px;
-      margin-top: 0px;
-    }
-    .heading{
-      margin-top: 0px;
-    }
-    .line{
-      display: none;
-    }
-  }
-  .seven-section .logo {
-    max-height: 30px;
-  }
+.seven-section {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  display: grid;
+  place-content: center;
+}
+.seven-section h1 {
+  margin: 82px 0 0 110px;
+  font-size: 40px;
+}
+.seven-section a{
+  text-decoration: none;
+}
+.container-new {
+  margin: 20px 110px 0;
+}
+.info {
+  display: flex;
+  font-size: 20px;
+}
+.info p:nth-child(2) {
+  padding-left: 80px;
+}
+.desc {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+}
+.heading {
+  display: grid;
+  margin-top: 20px;
+  max-width: 1300px;
+}
+.heading h2 {
+  font-size: 32px;
+}
+.heading p {
+  font-size: 18px;
+  text-align: justify;
+  margin-top: 16px;
   
+}
+.heading .desc-p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gambar img {
+  max-height: 324px;
+}
+.flex-seven {
+  display: flex;
+  align-items: center;
+}
+.flex-seven p {
+  font-size: 20px;
+}
+.flex-seven p:nth-child(1) {
+  background-color: #eaeaea;
+  margin-right: 48px;
+  padding: 8px 16px;
+  border-radius: 25px;
+}
+.line {
+  margin-top: 72px;
+  height: 2px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #e3e3e3;
+}
+.readMore{
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  
+}
+.heading a{
+  text-decoration: none;
+  color: rgb(70, 113, 255);
+}
+.heading a:hover{
+  color: rgb(24, 62, 189);
+}
+.readMoreMid{
+  display: grid;
+  place-content: center;
+}
+.readAll{
+  color: rgb(255, 255, 255);
+  font-size: 21px;
+  background-color: #2D2C2C;
+  padding: 7px 15px;
+  border-radius: 9px;
+  margin: 20px 0;
+}
+.readAlle:hover{
+  background-color: #4e4c4c;
+}
+@media (max-width: 1090px) {
+  .seven-section h1 {
+    font-size: 24px;
+
+  }
+  .heading a .readMore{
+    font-size: 14px;
+    margin-top: 0;
+  }
+  .signUp a{
+    padding: 12px 0;
+  }
+  .info p {
+    font-size: 12px;
+  }
+  .info p:nth-child(2) {
+    padding-left: 19px;
+  }
+  .heading h2 {
+    font-size: 16px;
+  }
+  .container-new {
+    margin: 22px 20px 16px 20px;
+  }
+  #link{
+    font-size: 20px;
+  }
+  .desc {
+    gap: 10px;
+  }
+  .heading .desc-p {
+    display: none;
+  }
+  .gambar img {
+    max-height: 135px;
+    max-width: 135px;
+  }
+  .flex-seven p:nth-child(1) {
+    margin-right: 8px;
+  }
+  .flex-seven p {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .heading {
+    max-width: 209px;
+    margin-top: 0px;
+  }
+  .heading {
+    margin-top: 0px;
+  }
+  .line {
+    display: none;
+  }
+}
+.seven-section .logo {
+  max-height: 30px;
+}

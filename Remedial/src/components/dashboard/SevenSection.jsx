@@ -1,6 +1,8 @@
 import "/src/css/SevenSection.css";
 // import { fetchData } from "/src/js/api/api.js";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function SevenSection() {
     const [data, setData] = useState([]);
@@ -37,7 +39,7 @@ function SevenSection() {
     <section className="seven-section">
       <h1>Artikel Terbaru</h1>
       {data.map((item) => (
-        <div key={item._id} className="container">
+        <div key={item._id} className="container-new">
           <div className="desc">
             <div className="heading">
               <div className="info">
@@ -51,7 +53,9 @@ function SevenSection() {
               <div className="flex-seven">
                 <p>{item.categoryDetails[0].categoryName}</p>
                 <p>{item.timesRead}</p>
+                
               </div>
+              <Link to={`/Artikel/${item._id}`}><p className="readMore">Read More....</p></Link>
             </div>
             <div className="gambar">
                 <img src={item.articleImgUrl} alt="Article Image" />
@@ -60,6 +64,8 @@ function SevenSection() {
           <div className="line"></div>
         </div>
       ))}
+      <NavLink to="/AllArtikel"><div className="readMoreMid"><p className="readAll">Read All Article</p></div></NavLink>
+      
     </section>
   );
 }

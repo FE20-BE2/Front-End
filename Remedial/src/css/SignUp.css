@@ -1,18 +1,103 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+.mid-signUp{
+    display: flex;
+    width: 100%;
+    height: 99vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 120px;
 }
-a {
-  text-decoration: none;
+.inputSignUp{
+    display: grid;
+    place-content: center;
 }
-
-.container p{
-    color: #676565;
+.signupGambar img{
+    max-height: 99vh;
+    border-bottom-left-radius: 70px;
 }
-.container a{
-    color: black;
+.mid-signUp input{
+    width: 514px;
+    height: 40px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-radius: 8px;
+    font-size: 17px;
+}
+.inputSignUp label{
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+}
+.inputSignUp h1{
+    font-size: 48px;
+    margin-bottom: 62px;
+    text-align: center;
+    font-weight: bolder;
+}
+.tombolSignUp{
+    border: none;
+    background-color: #292828;
+    color: white;
+    padding: 15px 24px;
+    border-radius: 8px;
+    margin-top: 45px;
+    font-size: 18px;
+    width: 514px;
+    
+}
+.tombolSignUp:hover{
+    background-color: #504e4e;
+    
+}
+@media (max-width: 1090px){
+    .inputSignUp{
+        gap: 0;
+        display: grid;
+        width: 100%;
+        
+        margin-top: 30px;
+    }
+    .inputSignUp h1{
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+    .inputSignUp label{
+        font-size: 16px;
+        text-shadow: white 1px 1px ;
+        font-weight: 800;
+    }
+    .inputSignUp{
+        position: absolute;
+        width: 100%;
+        height: 90vh;
+    }
+    .signupGambar{
+        display: grid;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+    }
+    .signupGambar img{
+        object-fit: cover; 
+        object-position: 50% 0;
+        width: 100%;
+        height: 100vh;
+        border-bottom-left-radius: 0px;
+    }
+    .mid-signUp input{
+        width: 300px;
+        margin: 12px 0;
+        padding: 15px 19px;
+    }
+    .mid-signUp label{
+        font-weight: bold;
+    }
+    .tombolSignUp{
+        margin-top: 20px;
+        padding: 8px;
+        width: 300px;
+    }
 }

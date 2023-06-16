@@ -3,8 +3,8 @@ import SecondSection from "./dashboard/SecondSection";
 import ThirdSection from "./dashboard/ThirdSection";
 import FourSection from "./dashboard/FourSection";
 import FiveSection from "./dashboard/FiveSection";
-import SixSection from "./dashboard/SixSection";
 import SevenSection from "./dashboard/SevenSection";
+import Footer from "/src/components/kelas/Footer";
 
 
 function LandingPage() {
@@ -15,8 +15,8 @@ function LandingPage() {
         <ThirdSection />
         <FourSection />
         <FiveSection />
-        <SixSection />
         <SevenSection />
+        <Footer />
       </>
     )
   }

@@ -15,20 +15,23 @@
     max-height: 99vh;
     border-bottom-right-radius: 70px;
 }
-.inputLogin{
+.signIn form{
     display: grid;
     place-content: center;
-    place-items: center;
+    height: 90vh;
 }
 .inputLogin h1{
     font-size: 48px;
     margin-bottom: 62px;
+    text-align: center;
+    font-weight: bolder;
 }
-label{
+.signIn label{
     font-weight: 500;
     font-size: 20px;
+    text-align: left;
 }
-input{
+.signIn input{
     width: 514px;
     height: 40px;
     padding: 20px 24px;
@@ -50,4 +53,49 @@ input{
 }
 .mid{
     display: grid;
+}
+@media (max-width: 1090px){
+    .signIn form{
+        gap: 0;
+        display: grid;
+        width: 100%;
+        
+        margin-top: 30px;
+    }
+    .inputLogin h1{
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+    .signIn label{
+        font-size: 16px;
+        text-shadow: white 1px 1px ;
+        font-weight: 800;
+    }
+    .inputLogin{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+    }
+    .loginGambar{
+        display: grid;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+    }
+    .loginGambar img{
+        object-fit: cover; 
+        object-position: 50% 0;
+        width: 100%;
+        height: 100vh;
+        border-bottom-right-radius: 0px;
+    }
+    .signIn input{
+        width: 300px;
+        margin: 12px 0;
+        padding: 15px 19px;
+    }
+    .tombolLogin{
+        margin-top: 20px;
+        padding: 8px;
+    }
 }

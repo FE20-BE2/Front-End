@@ -1,3 +1,6 @@
+li a{
+  text-decoration: none;
+}
 nav {
   position: fixed;
   width: 100%;
@@ -16,15 +19,24 @@ nav {
   font-family: "Open Sans", sans-serif;
   background-color: rgb(244, 240, 240);
 }
-.logo {
+ul.navbar-new .open {
+  right: 0%;
+  height: auto;
+}
+nav .navbar-new{
+  margin-bottom: 0px;
+}
+.logo-remedial {
   display: flex;
   align-items: center;
+  max-height: 80px;
 }
-.logo {
+.logo-remedial {
   width: min(40vw, 220px);
 }
-.navbar {
+.navbar-new {
   display: flex;
+  align-items: center;
 }
 .textLogin{
   display: flex;
@@ -42,16 +54,18 @@ nav {
 .buttonLogOut p{
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 0;
 }
 .buttonLogOut{
   border-style: none;
   color: black;
   border-radius: 8px;
+  
 }
 .buttonLogOut:hover {
   color: rgb(143, 142, 142);
 }
-.navbar a {
+.navbar-new a {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 5px 0;
@@ -93,15 +107,16 @@ nav {
     padding: 14px 2%;
     transition: 0.2s;
   }
-  .navbar a {
+  .navbar-new a {
     padding: 5px 0;
     margin: 0px 20px;
+    
   }
 }
 .signUp a {
   color: white;
   background-color: black;
-  padding: 12px 24px;
+  padding: 12px 15px;
   border-radius: 8px;
 }
 /* setelah mobile */
@@ -112,7 +127,7 @@ nav {
   #menu-icon {
     display: block;
   }
-  .navbar {
+  .navbar-new {
     position: absolute;
     top: 100%;
     right: -100%;
@@ -122,30 +137,34 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     transition: all 0.5s ease;
+    align-items: unset;
   }
-  .navbar a {
+  ul.navbar-new.open {
+    right: 0%;
+    height: auto;
+}
+  .navbar-new a {
     display: block;
-    margin: 12px 0;
-    padding: 0px 0px 0px 50px;
+    margin: 7px 0;
+    
     transition: all 0.5s ease;
   }
-  .navbar a:hover {
+  .navbar-new a:hover {
     color: red;
     /* transform: translateY(5px); */
   }
   
-  .navbar.open {
+  ul.navbar-new .open {
     right: 0%;
     height: auto;
   }
   #kelas {
-    margin-left: 40px;
     margin-right: 115px;
     padding-left: 10px;
   }
   .buttonLogOut{
     margin-left: 40px;
-    margin: 12px 0 12px 40px;
+    margin: 12px 0;
   }
   .signUp a {
     color: black;

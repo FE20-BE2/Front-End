@@ -17,6 +17,14 @@
     margin-top: 24px;
     font-size: 18px;
   }
+  .berita-grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+  }
   .flex-container-berita{
     display: flex;
     flex-direction: row;
