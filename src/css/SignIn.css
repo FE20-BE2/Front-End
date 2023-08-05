@@ -54,6 +54,10 @@
 .mid{
     display: grid;
 }
+.error-login{
+    text-align: center !important;
+    color: rgb(255, 80, 80);
+}
 @media (max-width: 1090px){
     .signIn form{
         gap: 0;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import "/src/css/SignIn.css";
@@ -8,7 +8,16 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { isLoggedIn, handleLogin } = useContext(AuthContext);
-  
+  const [isUnmounting, setIsUnmounting] = useState(false);
+
+  useEffect(() => {
+    
+    return () => {
+      // Ketika komponen dibongkar (unmounted), set isUnmounting menjadi true
+      setIsUnmounting(true);
+    };
+    
+  }, []);
 
   if (isLoggedIn) {
     return <Navigate to="/" />;
@@ -17,6 +26,11 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(email, password);
+
+    if (!isUnmounting) {
+      // Set state error menjadi string kosong setelah proses login selesai
+      setError("");
+    }
   };
 
   return (
@@ -45,6 +59,7 @@ const SignIn = () => {
               required
               onChange={(e) => setPassword(e.target.value)}
             />
+            
             <button className="tombolLogin" type="submit">Sign In</button>
             </form>
           </div>

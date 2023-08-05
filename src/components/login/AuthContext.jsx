@@ -1,77 +1,106 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
-import { useCookies } from 'react-cookie';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import axios from "axios";
+import { useCookies } from "react-cookie";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [, setCookie, removeCookie] = useCookies(['token']);
+  const [, setCookie, removeCookie] = useCookies(["token", "username"]);
   const [user, setUser] = useState(null);
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    const token = getCookie('token');
+    const token = getCookie("token");
+    const storedUsername = getCookie("username");
+
     if (token) {
-      // Validasi token atau lakukan permintaan API untuk mendapatkan informasi pengguna dengan token
-      // Contoh sederhana di sini hanya mengatur status login sebagai true
       setIsLoggedIn(true);
+    }
+
+    if (storedUsername) {
+      setUsername(storedUsername); // Set the username from the cookie
     }
   }, []);
 
   const handleLogin = async (email, password) => {
     try {
-      const response = await axios.post('https://api-remedial-production-ecd6.up.railway.app/api/users/signin', {
-        email,
-        password
-      });
-      const { token, username } = response.data;
+      const response = await axios.get(
+        "https://userpass.tineijercamp.my.id/signin.php"
+      );
+      const users = response.data;
 
-      // Set cookie dengan masa berlaku selama 1 jam
-      setCookie('token', token, { path: '/', expires: new Date(Date.now() + 60 * 60 * 1000) });
-      setUsernameToCookie(username);
+      // Find the user with matching email and password
+      const matchedUser = users.find(
+        (user) => user.email === email && user.password === password
+      );
 
-      // Set status login
-      setIsLoggedIn(true);
-      setUser(userData);
+      if (matchedUser) {
+        // Set cookie with a 1-hour expiration
+        const tokenExpiration = new Date(Date.now() + 60 * 60 * 1000);
+
+        // Encode the username before saving it to the cookie
+        const encodedUsername = encodeURIComponent(matchedUser.username);
+
+        setCookie("token", "test", {
+          path: "/",
+          expires: tokenExpiration,
+        });
+
+        // Do not encode the username when setting the cookie value
+        setCookie("username", matchedUser.username, {
+          path: "/",
+          expires: tokenExpiration,
+        });
+
+        // Set status login and store the user data in state
+        setIsLoggedIn(true);
+        setUser({ username: matchedUser.username });
+        setError("");
+      } else {
+        window.alert("Email atau Password Salah");
+      }
     } catch (error) {
-      console.error('Failed to login. Please check your credentials.');
+      setError("Failed to login. Please try again later.");
     }
   };
 
   const handleLogout = () => {
-    // Hapus cookie dan reset status login
-    removeCookie('token');
-    removeCookie('username');
+    // Remove cookies and reset status login
+    removeCookie("token");
+    removeCookie("username");
     setIsLoggedIn(false);
     setUser(null);
   };
 
-  const setUsernameToCookie = (username) => {
-    setCookie('username', username, { path: '/', expires: new Date(Date.now() + 60 * 60 * 1000) });
-  };
-
   const getUsernameFromCookie = () => {
-    return getCookie('username');
+    return getCookie("username");
   };
 
   const getCookie = (name) => {
-    const cookies = document.cookie.split('; ');
+    const cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].split('=');
+      const cookie = cookies[i].split("=");
       if (cookie[0] === name) {
-        return cookie[1];
+        return decodeURIComponent(cookie[1]);
       }
     }
     return null;
   };
 
-  
-
   return (
-    <AuthContext.Provider value={{ user, isLoggedIn, handleLogin, handleLogout, getUsernameFromCookie }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isLoggedIn,
+        handleLogin,
+        handleLogout,
+        getUsernameFromCookie,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
-export const useAuth = () => useContext(AuthContext);
 
+export const useAuth = () => useContext(AuthContext);

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import "../css/navbar.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo/Logo.png";
@@ -9,6 +9,22 @@ import { AuthContext } from './login/AuthContext';
 const Navbar = () => {
   const { isLoggedIn, handleLogout, getUsernameFromCookie } = useContext(AuthContext);
   const username = getUsernameFromCookie();
+
+  useEffect(() => {
+    let menu = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar-new');
+
+    const toggleNavbar = () => {
+      menu.classList.toggle('bx-x');
+      navbar.classList.toggle('open');
+    };
+
+    menu.addEventListener('click', toggleNavbar);
+
+    return () => {
+      menu.removeEventListener('click', toggleNavbar);
+    };
+  }, []);
 
   return (
     <nav >
